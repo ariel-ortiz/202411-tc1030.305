@@ -1,14 +1,18 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 
 class Rational {
 
 public:
-    Rational(int numerator, int denominator);
-    std::string to_string();
+    Rational(int numerator=0, int denominator=1);
+    std::string to_string() const;
+    Rational operator+(const Rational& other) const;
 
 private:
     int _numerator;
     int _denominator;
 };
+
+std::ostream& operator<<(std::ostream& os, const Rational& r);

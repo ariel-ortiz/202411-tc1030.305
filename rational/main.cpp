@@ -4,9 +4,13 @@
 int main()
 {
     Rational a(1, 2);
-    Rational b(2, -4);
+    Rational b(1, 3);
+    Rational c;
 
-    std::cout << "a = " << a.to_string() << "\n";
-    std::cout << "b = " << b.to_string() << "\n";
+    c = a + b;
+
+    std::cout << "a = " << a << "\n";
+    std::cout << "b = " << b << "\n";
+    std::cout << "c = " << c << "\n";
     return 0;
 }

@@ -44,6 +44,31 @@ Rational Rational::operator+(const Rational& other) const
     return Rational(new_numerator, new_denominator);
 }
 
+Rational Rational::operator-(const Rational& other) const
+{
+    return *this + -other;
+}
+
+bool Rational::operator==(const Rational& other) const
+{
+    if (this->_numerator == other._numerator
+            and this->_denominator == other._denominator) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool Rational::operator!=(const Rational& other) const
+{
+    return not (*this == other);
+}
+
+Rational Rational::operator-() const
+{
+    return Rational(-_numerator, _denominator);
+}
+
 std::ostream& operator<<(std::ostream& os, const Rational& r)
 {
     return os << r.to_string();

@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "rational.h"
 
 int gcd(int a, int b)
@@ -12,6 +13,10 @@ int gcd(int a, int b)
 
 Rational::Rational(int numerator, int denominator)
 {
+    if (denominator == 0) {
+        throw std::invalid_argument("Denominator cannot be zero!");
+    }
+
     int sign;
     if (numerator * denominator < 0) {
         sign = -1;
@@ -67,6 +72,11 @@ bool Rational::operator!=(const Rational& other) const
 Rational Rational::operator-() const
 {
     return Rational(-_numerator, _denominator);
+}
+
+Rational::operator double() const
+{
+    return static_cast<double>(_numerator) / _denominator;
 }
 
 std::ostream& operator<<(std::ostream& os, const Rational& r)

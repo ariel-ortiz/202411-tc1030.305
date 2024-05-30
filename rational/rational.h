@@ -13,6 +13,7 @@ public:
     bool operator!=(const Rational& other) const;
     Rational operator-() const;
     Rational operator-(const Rational& other) const;
+    operator double() const;
 
 private:
     int _numerator;

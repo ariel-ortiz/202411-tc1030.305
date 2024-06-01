@@ -5,7 +5,7 @@ std::string Figure::to_string()
 {
     return "My area is: "
         + std::to_string(area())
-        + ", my permimeter is: "
+        + ", my perimeter is: "
         + std::to_string(perimeter());
 }
 

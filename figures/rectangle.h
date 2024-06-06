@@ -7,7 +7,7 @@ public:
     Rectangle(double length, double width);
     double area() override;
     double perimeter() override;
-private:
+protected:
     double _length;
     double _width;
 };
